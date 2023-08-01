@@ -1,0 +1,177 @@
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+padding: 0;
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+html, body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+height: 100%;
+background-color: #F2F2F2;
+}
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+/* Custom Variables */
+
+:root {
+    /* Primary Colors */
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    /* Neutral Colors */
+    --clr-very-dark-blue: hsl(234, 12%, 34%); /* #FD4F62 */
+    --clr-grayish-blue: hsl(229, 6%, 66%);
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+    /* Font Styles */
+    --fs-body: 0.9375rem;
+    --ff-poppins: 'Poppins', sans-serif;
+}
+
+/* Styles */
+
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-family: var(--ff-poppins);
+}
+
+.container {
+  background-color: var(--clr-very-light-gray);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 409px;
+  padding: 2.5rem;
+}
+
+.title-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  padding-top: 5.3125rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--clr-very-dark-blue);
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--clr-very-dark-blue);
+}
+
+img {
+  margin-left: auto;
+}
+
+.title-container p {
+  font-size: 0.9375rem;
+  color: var(--clr-very-dark-blue);
+  margin-bottom: 4.9375rem;
+}
+
+.supervisor-container {
+  border-top: 3px solid var(--clr-cyan);
+}
+
+.team-container {
+  border-top: 3px solid var(--clr-red);
+}
+
+.karma-container {
+  border-top: 3px solid var(--clr-orange);
+}
+
+.calculator-container {
+  border-top: 3px solid var(--clr-blue);
+}
+
+/* Repeated Styles */
+
+.supervisor-container, .team-container, .karma-container, .calculator-container {
+  background-color: white;
+  padding: 2.25rem;
+  border-radius: 4px;
+  margin-bottom: 1.875rem;
+  box-shadow: 0 7px 11px #979797;
+}
+
+.supervisor-container p, .team-container p, .karma-container p, .calculator-container p {
+  margin-bottom: 20px;
+}
+
+/* Media Queries */
+
+@media (min-width: 1200px) {
+
+  .container {
+    max-width: none;
+    padding: 6.25rem;
+  }
+
+  .title-container {
+    width: 540px;
+    margin: auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 352px);
+    column-gap: 25px;
+    justify-content: center;
+  }
+
+  .box-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .supervisor-container, .team-container, .karma-container, .calculator-container {
+    width: 350px;
+    height: 237px;
+  }
+
+  .supervisor-container, .calculator-container {
+    transform: translate(0%, 50%);
+  }
+
+}
